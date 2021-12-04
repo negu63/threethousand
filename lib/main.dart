@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'package:threethousand/modules/home/controller.dart';
 import 'package:threethousand/modules/home/page.dart';
 
+import 'core/utils/values/translation.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -14,7 +16,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(NumberController());
     return GetMaterialApp(
-      home: HomePage(),
+      translations: Messages(),
+      locale: Get.deviceLocale,
+      fallbackLocale: const Locale('en', 'US'),
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
     );
   }
 }
