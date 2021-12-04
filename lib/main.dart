@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:threethousand/modules/home/controller.dart';
 import 'package:threethousand/modules/home/page.dart';
 
 void main() {
@@ -11,6 +12,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Get.put(NumberController());
     return GetMaterialApp(
       home: HomePage(),
     );
