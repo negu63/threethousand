@@ -5,11 +5,13 @@ class Messages extends Translations {
   Map<String, Map<String, String>> get keys => {
         'en_US': {
           'appTitle': '',
-          'aboutTitle': '',
+          'aboutText': 'about',
+          'daysText': 'days',
         },
         'ko_KR': {
           'appTitle': '',
-          'aboutTitle': '',
+          'aboutTitle': '약',
+          'daysText': '일',
         },
       };
 }
