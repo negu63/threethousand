@@ -9,10 +9,10 @@ class LifeSpan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final numberController = Get.find<NumberController>();
+    final birthdayController = Get.find<BirthdayController>();
     return Obx(
       () => SlidingNumber(
-        number: numberController.lifeSpan.value,
+        number: birthdayController.lifeSpan.value,
         style: Theme.of(context).textTheme.headline1!,
         duration: lifeSpanSlidingDuration,
         curve: Curves.easeOut,

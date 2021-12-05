@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:threethousand/core/utils/values/constants.dart';
 
-class NumberController extends GetxController {
+class BirthdayController extends GetxController {
   RxInt year = DateTime.now().year.obs;
   RxInt month = DateTime.now().month.obs;
   RxInt day = DateTime.now().day.obs;

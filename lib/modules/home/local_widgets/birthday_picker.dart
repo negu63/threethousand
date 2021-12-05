@@ -68,15 +68,15 @@ class YearPicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final numberController = Get.find<NumberController>();
+    final birthdayController = Get.find<BirthdayController>();
     return Obx(
       () => NumberPicker(
         itemCount: 1,
         minValue: 0,
         maxValue: DateTime.now().year,
-        value: numberController.year.value,
+        value: birthdayController.year.value,
         selectedTextStyle: Theme.of(context).textTheme.headline6,
-        onChanged: numberController.yearChanged,
+        onChanged: birthdayController.yearChanged,
       ),
     );
   }
@@ -87,15 +87,15 @@ class MonthPicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final numberController = Get.find<NumberController>();
+    final birthdayController = Get.find<BirthdayController>();
     return Obx(
       () => NumberPicker(
         itemCount: 1,
         minValue: 1,
         maxValue: 12,
-        value: numberController.month.value,
+        value: birthdayController.month.value,
         selectedTextStyle: Theme.of(context).textTheme.headline6,
-        onChanged: numberController.monthChanged,
+        onChanged: birthdayController.monthChanged,
       ),
     );
   }
@@ -106,15 +106,15 @@ class DayPicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final numberController = Get.find<NumberController>();
+    final birthdayController = Get.find<BirthdayController>();
     return Obx(
       () => NumberPicker(
         itemCount: 1,
         minValue: 1,
         maxValue: 31,
-        value: numberController.day.value,
+        value: birthdayController.day.value,
         selectedTextStyle: Theme.of(context).textTheme.headline6,
-        onChanged: numberController.dayChanged,
+        onChanged: birthdayController.dayChanged,
       ),
     );
   }

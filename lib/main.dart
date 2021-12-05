@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(NumberController());
+    Get.put(BirthdayController());
     return GetMaterialApp(
       translations: Messages(),
       locale: Get.deviceLocale,
