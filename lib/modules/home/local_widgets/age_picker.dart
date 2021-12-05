@@ -11,6 +11,7 @@ class AgePicker extends StatelessWidget {
     final numberController = Get.find<NumberController>();
     return Obx(
       () => NumberPicker(
+        itemCount: 1,
         minValue: 0,
         maxValue: 969,
         value: numberController.age.value,
