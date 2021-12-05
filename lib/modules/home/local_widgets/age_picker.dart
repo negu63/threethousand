@@ -15,6 +15,7 @@ class AgePicker extends StatelessWidget {
         minValue: 0,
         maxValue: 969,
         value: numberController.age.value,
+        selectedTextStyle: Theme.of(context).textTheme.headline6,
         onChanged: numberController.ageChanged,
       ),
     );
