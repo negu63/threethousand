@@ -3,7 +3,9 @@ import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 import 'package:threethousand/core/utils/values/constants.dart';
 
 class NumberController extends GetxController {
-  RxInt age = 0.obs;
+  RxInt year = DateTime.now().year.obs;
+  RxInt month = DateTime.now().month.obs;
+  RxInt day = DateTime.now().day.obs;
   RxInt lifeSpan = 30000.obs;
 
   @override
@@ -11,17 +13,39 @@ class NumberController extends GetxController {
     super.onInit();
 
     debounce(
-      age,
-      caculateLifeSpan,
-      time: agePickerDebounceDuration,
+      year,
+      calculateLifeSpan,
+      time: pickerDebounceDuration,
+    );
+
+    debounce(
+      month,
+      calculateLifeSpan,
+      time: pickerDebounceDuration,
+    );
+
+    debounce(
+      day,
+      calculateLifeSpan,
+      time: pickerDebounceDuration,
     );
   }
 
-  ageChanged(int value) {
-    age.value = value;
+  yearChanged(int value) {
+    year.value = value;
   }
 
-  caculateLifeSpan(int age) {
-    lifeSpan.value = 30000 - age * 365;
+  monthChanged(int value) {
+    month.value = value;
+  }
+
+  dayChanged(int value) {
+    day.value = value;
+  }
+
+  calculateLifeSpan(int value) {
+    final now = DateTime.now();
+    final birthday = DateTime(year.value, month.value, day.value);
+    lifeSpan.value = 30000 - now.difference(birthday).inDays.abs();
   }
 }
