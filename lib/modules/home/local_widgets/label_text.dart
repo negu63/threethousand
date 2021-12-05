@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_utils/src/extensions/internacionalization.dart';
+import 'package:threethousand/modules/home/controller.dart';
 
 class AboutText extends StatelessWidget {
   const AboutText({Key? key}) : super(key: key);
@@ -21,11 +23,19 @@ class DaysText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LabelText(
-      text: 'daysText'.tr,
-      mainAxisAlignment: MainAxisAlignment.end,
-      padding: const EdgeInsets.only(
-        right: 50,
+    final birthdayController = Get.find<BirthdayController>();
+
+    return Obx(
+      () => LabelText(
+        text: birthdayController.dateType.string
+                .toLowerCase()
+                .replaceFirst('datetype.', '') +
+            's',
+        mainAxisAlignment: MainAxisAlignment.end,
+        padding: const EdgeInsets.only(
+          right: 50,
+        ),
+        onTap: birthdayController.dateTypeTapped,
       ),
     );
   }
@@ -38,11 +48,13 @@ class LabelText extends StatelessWidget {
     this.mainAxisAlignment,
     this.padding,
     this.style,
+    this.onTap,
   }) : super(key: key);
 
   final MainAxisAlignment? mainAxisAlignment;
   final EdgeInsets? padding;
   final TextStyle? style;
+  final Function()? onTap;
   final String text;
 
   @override
@@ -52,10 +64,18 @@ class LabelText extends StatelessWidget {
       children: [
         Padding(
           padding: padding ?? EdgeInsets.zero,
-          child: Text(
-            text,
-            style: style ?? Theme.of(context).textTheme.headline5!,
-          ),
+          child: onTap == null
+              ? Text(
+                  text,
+                  style: style ?? Theme.of(context).textTheme.headline5!,
+                )
+              : GestureDetector(
+                  onTap: onTap,
+                  child: Text(
+                    text,
+                    style: style ?? Theme.of(context).textTheme.headline5!,
+                  ),
+                ),
         ),
       ],
     );
