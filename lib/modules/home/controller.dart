@@ -7,6 +7,7 @@ class BirthdayController extends GetxController {
   RxInt month = DateTime.now().month.obs;
   RxInt day = DateTime.now().day.obs;
   RxInt lifeSpan = 30000.obs;
+  Rx<DateType> dateType = DateType.DAY.obs;
 
   @override
   void onInit() {
@@ -29,6 +30,11 @@ class BirthdayController extends GetxController {
       calculateLifeSpan,
       time: pickerDebounceDuration,
     );
+
+    debounce(
+      dateType,
+      calculateLifeSpan,
+    );
   }
 
   yearChanged(int value) {
@@ -43,9 +49,41 @@ class BirthdayController extends GetxController {
     day.value = value;
   }
 
-  calculateLifeSpan(int value) {
+  calculateLifeSpan(value) {
     final now = DateTime.now();
     final birthday = DateTime(year.value, month.value, day.value);
-    lifeSpan.value = 30000 - now.difference(birthday).inDays.abs();
+    final days = 30000 - now.difference(birthday).inDays.abs();
+
+    switch (dateType.value) {
+      case DateType.DAY:
+        lifeSpan.value = days;
+        break;
+      case DateType.WEEK:
+        lifeSpan.value = days ~/ 7;
+        break;
+      case DateType.MONTH:
+        lifeSpan.value = days ~/ 30;
+        break;
+      case DateType.YEAR:
+        lifeSpan.value = days ~/ 365;
+        break;
+    }
+  }
+
+  dateTypeTapped() {
+    switch (dateType.value) {
+      case DateType.DAY:
+        dateType.value = DateType.WEEK;
+        break;
+      case DateType.WEEK:
+        dateType.value = DateType.MONTH;
+        break;
+      case DateType.MONTH:
+        dateType.value = DateType.YEAR;
+        break;
+      case DateType.YEAR:
+        dateType.value = DateType.DAY;
+        break;
+    }
   }
 }
