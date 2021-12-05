@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:threethousand/modules/home/local_widgets/label_text.dart';
 import 'package:threethousand/modules/home/local_widgets/birthday_picker.dart';
 import 'package:threethousand/modules/home/local_widgets/life_span.dart';
+import 'package:threethousand/modules/home/local_widgets/oss_button.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -32,6 +33,11 @@ class HomePage extends StatelessWidget {
                     const SizedBox(height: 50),
                     const BirthdayPicker(),
                   ],
+                ),
+                Positioned(
+                  right: 5,
+                  bottom: 5,
+                  child: OssButton(),
                 ),
               ],
             ),
