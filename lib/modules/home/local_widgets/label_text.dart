@@ -27,10 +27,9 @@ class DaysText extends StatelessWidget {
 
     return Obx(
       () => LabelText(
-        text: birthdayController.dateType.string
-                .toLowerCase()
-                .replaceFirst('datetype.', '') +
-            's',
+        text:
+            '${birthdayController.dateType.string.toLowerCase().replaceFirst('datetype.', '')}sText'
+                .tr,
         mainAxisAlignment: MainAxisAlignment.end,
         padding: const EdgeInsets.only(
           right: 50,
