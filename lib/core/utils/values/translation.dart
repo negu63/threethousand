@@ -7,13 +7,17 @@ class Messages extends Translations {
           'appTitle': 'About 30000 days',
           'aboutText': 'About',
           'daysText': 'days',
-          'ageText': 'Age',
+          'yearText': 'Year',
+          'monthText': 'Month',
+          'dayText': 'Day',
         },
         'ko_KR': {
           'appTitle': '약 30000일',
           'aboutText': '약',
           'daysText': '일',
-          'ageText': '나이',
+          'yearText': '년',
+          'monthText': '월',
+          'dayText': '일',
         },
       };
 }
