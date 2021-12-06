@@ -34,6 +34,7 @@ class BirthdayController extends GetxController {
     debounce(
       dateType,
       calculateLifeSpan,
+      time: pickerDebounceDuration ~/ 5,
     );
   }
 
