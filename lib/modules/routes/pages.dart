@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:threethousand/modules/home/page.dart';
 import 'package:threethousand/modules/oss/page.dart';
-import 'package:threethousand/modules/warning/page.dart';
+import 'package:threethousand/modules/notice/page.dart';
 
 import 'routes.dart';
 
