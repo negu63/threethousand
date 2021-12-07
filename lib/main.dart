@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:threethousand/modules/home/controller.dart';
-import 'package:threethousand/modules/home/page.dart';
+import 'package:threethousand/modules/warning/page.dart';
 
 import 'core/utils/values/translation.dart';
 import 'modules/routes/pages.dart';
@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
       locale: Get.deviceLocale,
       fallbackLocale: const Locale('en', 'US'),
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.home,
+      initialRoute: Routes.notice,
       getPages: AppPages.pages,
-      home: const SafeArea(child: HomePage()),
+      home: const SafeArea(child: NoticePage()),
     );
   }
 }
