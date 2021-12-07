@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:threethousand/modules/home/controller.dart';
-import 'package:threethousand/modules/warning/page.dart';
+import 'package:threethousand/modules/notice/page.dart';
 
 import 'core/utils/values/translation.dart';
 import 'modules/routes/pages.dart';
