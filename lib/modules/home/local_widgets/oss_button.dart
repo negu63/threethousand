@@ -9,6 +9,7 @@ class OssButton extends StatelessWidget {
     return IconButton(
       icon: const Icon(
         Icons.info_outline,
+        size: 30,
       ),
       onPressed: () {
         Get.toNamed('/oss');
