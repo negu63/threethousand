@@ -11,8 +11,9 @@ class AboutText extends StatelessWidget {
     return LabelText(
       text: 'aboutText'.tr,
       mainAxisAlignment: MainAxisAlignment.start,
-      padding: const EdgeInsets.only(
-        left: 50,
+      padding: EdgeInsets.only(
+        right: 10,
+        bottom: Get.height / 14,
       ),
     );
   }
@@ -31,8 +32,9 @@ class DaysText extends StatelessWidget {
             '${birthdayController.dateType.string.toLowerCase().replaceFirst('datetype.', '')}sText'
                 .tr,
         mainAxisAlignment: MainAxisAlignment.end,
-        padding: const EdgeInsets.only(
-          right: 50,
+        padding: EdgeInsets.only(
+          left: 10,
+          top: Get.height / 14,
         ),
         onTap: birthdayController.dateTypeTapped,
       ),
