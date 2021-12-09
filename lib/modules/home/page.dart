@@ -27,14 +27,19 @@ class HomePage extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const AboutText(),
-                    const LifeSpan(),
-                    const DaysText(),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const AboutText(),
+                        const LifeSpan(),
+                        const DaysText(),
+                      ],
+                    ),
                     const SizedBox(height: 50),
                     const BirthdayPicker(),
                   ],
                 ),
-                Positioned(
+                const Positioned(
                   right: 5,
                   bottom: 5,
                   child: OssButton(),
