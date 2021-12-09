@@ -27,26 +27,28 @@ class HomePage extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const AboutText(),
-                        const LifeSpan(),
-                        const DaysText(),
-                      ],
+                    Container(
+                      margin: const EdgeInsets.only(top: 50, bottom: 50),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const AboutText(),
+                          const LifeSpan(),
+                          const DaysText(),
+                        ],
+                      ),
                     ),
-                    const SizedBox(height: 50),
                     const BirthdayPicker(),
                   ],
                 ),
                 const Positioned(
-                  top: 0,
+                  bottom: 3,
                   right: 4,
                   child: OssButton(),
                 ),
                 const Positioned(
-                  top: 0,
-                  left: 4,
+                  bottom: 6,
+                  left: 12,
                   child: TitleText(),
                 ),
               ],
