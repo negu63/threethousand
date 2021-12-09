@@ -73,7 +73,7 @@ class YearPicker extends StatelessWidget {
     return Obx(
       () => NumberPicker(
         itemCount: 1,
-        minValue: year - 969,
+        minValue: year - 200,
         maxValue: year,
         value: birthdayController.year.value,
         selectedTextStyle: Theme.of(context).textTheme.headline6,
