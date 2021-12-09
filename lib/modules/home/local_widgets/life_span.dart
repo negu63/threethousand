@@ -13,7 +13,9 @@ class LifeSpan extends StatelessWidget {
     return Obx(
       () => SlidingNumber(
         number: birthdayController.lifeSpan.value,
-        style: Theme.of(context).textTheme.headline1!,
+        style: Get.width >= 382
+            ? Theme.of(context).textTheme.headline1!
+            : Theme.of(context).textTheme.headline2!,
         duration: lifeSpanSlidingDuration,
         curve: Curves.easeOut,
       ),
