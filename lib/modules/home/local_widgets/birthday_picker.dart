@@ -69,11 +69,12 @@ class YearPicker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final birthdayController = Get.find<BirthdayController>();
+    final year = DateTime.now().year;
     return Obx(
       () => NumberPicker(
         itemCount: 1,
-        minValue: 0,
-        maxValue: DateTime.now().year,
+        minValue: year - 969,
+        maxValue: year,
         value: birthdayController.year.value,
         selectedTextStyle: Theme.of(context).textTheme.headline6,
         onChanged: birthdayController.yearChanged,
