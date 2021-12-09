@@ -14,8 +14,14 @@ class LifeSpan extends StatelessWidget {
       () => SlidingNumber(
         number: birthdayController.lifeSpan.value,
         style: Get.width >= 382
-            ? Theme.of(context).textTheme.headline1!
-            : Theme.of(context).textTheme.headline2!,
+            ? Theme.of(context)
+                .textTheme
+                .headline1!
+                .copyWith(color: Colors.grey.shade800)
+            : Theme.of(context)
+                .textTheme
+                .headline2!
+                .copyWith(color: Colors.grey.shade800),
         duration: lifeSpanSlidingDuration,
         curve: Curves.easeOut,
       ),
