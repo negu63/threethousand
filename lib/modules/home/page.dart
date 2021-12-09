@@ -40,9 +40,14 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 const Positioned(
-                  right: 5,
-                  bottom: 5,
+                  top: 0,
+                  right: 4,
                   child: OssButton(),
+                ),
+                const Positioned(
+                  top: 0,
+                  left: 4,
+                  child: TitleText(),
                 ),
               ],
             ),
