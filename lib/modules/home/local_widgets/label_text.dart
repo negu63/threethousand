@@ -49,7 +49,6 @@ class TitleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return LabelText(
       text: 'appTitle'.tr,
-      padding: const EdgeInsets.fromLTRB(10, 3, 0, 0),
     );
   }
 }
