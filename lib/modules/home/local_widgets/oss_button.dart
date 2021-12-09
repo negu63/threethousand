@@ -6,14 +6,14 @@ class OssButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-      icon: const Icon(
-        Icons.info_outline,
-        size: 30,
-      ),
+    return TextButton(
       onPressed: () {
         Get.toNamed('/oss');
       },
+      child: Text(
+        'i',
+        style: Theme.of(context).textTheme.headline5!,
+      ),
     );
   }
 }
