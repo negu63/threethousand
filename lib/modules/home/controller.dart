@@ -53,21 +53,26 @@ class BirthdayController extends GetxController {
   calculateLifeSpan(value) {
     final now = DateTime.now();
     final birthday = DateTime(year.value, month.value, day.value);
-    final days = now.difference(birthday).inDays.abs();
-
-    switch (dateType.value) {
-      case DateType.DAY:
-        lifeSpan.value = days;
-        break;
-      case DateType.WEEK:
-        lifeSpan.value = days ~/ 7;
-        break;
-      case DateType.MONTH:
-        lifeSpan.value = days ~/ 30;
-        break;
-      case DateType.YEAR:
-        lifeSpan.value = days ~/ 365;
-        break;
+    final days = now.difference(birthday).inDays;
+    if (now.year >= year.value &&
+        now.month >= month.value &&
+        now.day >= day.value) {
+      switch (dateType.value) {
+        case DateType.DAY:
+          lifeSpan.value = days;
+          break;
+        case DateType.WEEK:
+          lifeSpan.value = days ~/ 7;
+          break;
+        case DateType.MONTH:
+          lifeSpan.value = days ~/ 30;
+          break;
+        case DateType.YEAR:
+          lifeSpan.value = days ~/ 365;
+          break;
+      }
+    } else {
+      lifeSpan.value = 0;
     }
   }
 
