@@ -24,7 +24,8 @@
   <meta property="og:title" content="평균 수명 약 30000일. 나는 얼마나 살았을까?">
   <meta property="og:description" content="">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://user-images.githubusercontent.com/86910140/145382854-2624adc0-c869-43dd-b237-e2dc8c89fe94.png">
+  <meta property="og:image"
+    content="https://user-images.githubusercontent.com/86910140/145382854-2624adc0-c869-43dd-b237-e2dc8c89fe94.png">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -124,6 +125,57 @@
       // Service workers not supported. Just drop the <script> tag.
       loadMainDartJs();
     }
+  </script>
+  <script>
+    // Patch wheel deltaMode
+    (function () {
+      function overrideProp(obj, name, descriptor) {
+        var prevDescriptor = Object.getOwnPropertyDescriptor(obj, name);
+
+        if (!!descriptor.get) {
+          var _get = descriptor.get;
+          descriptor.get = function () {
+            var value = (!!prevDescriptor && !!prevDescriptor.get) ? prevDescriptor.get.call(this) : null;
+            return _get.call(this, value);
+          }
+        }
+        if (!!descriptor.set) {
+          var _set = descriptor.set;
+          descriptor.set = function (value) {
+            if (_set(value) !== false && (!!prevDescriptor && !!prevDescriptor.set)) {
+              prevDescriptor.set.call(this, value);
+            }
+          }
+        }
+
+        Object.defineProperty(obj, name, descriptor);
+      }
+
+      var syntheticEvent = new WheelEvent("syntheticWheel", { "deltaX": 4, "deltaMode": 0 });
+      if (syntheticEvent.deltaMode == 0) {
+        overrideProp(WheelEvent.prototype, 'deltaMode', {
+          get: function (value) {
+            return 1; // DOM_DELTA_LINE
+          }
+        });
+        overrideProp(WheelEvent.prototype, 'deltaX', {
+          get: function (value) {
+
+            return value; // 3 per scroll
+          }
+        });
+        overrideProp(WheelEvent.prototype, 'deltaY', {
+          get: function (value) {
+            if (value > 0) {
+              value = 10;
+            } else {
+              value = -10;
+            }
+            return value; // 3 line per scroll
+          }
+        });
+      }
+    })();
   </script>
 </body>
 
