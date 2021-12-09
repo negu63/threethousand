@@ -22,10 +22,7 @@ class BirthdayPicker extends StatelessWidget {
                   .headline6!
                   .copyWith(fontWeight: FontWeight.normal),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: YearPicker(),
-            ),
+            const YearPicker(),
           ],
         ),
         Column(
@@ -37,10 +34,7 @@ class BirthdayPicker extends StatelessWidget {
                   .headline6!
                   .copyWith(fontWeight: FontWeight.normal),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: MonthPicker(),
-            ),
+            const MonthPicker(),
           ],
         ),
         Column(
@@ -52,10 +46,7 @@ class BirthdayPicker extends StatelessWidget {
                   .headline6!
                   .copyWith(fontWeight: FontWeight.normal),
             ),
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: DayPicker(),
-            ),
+            const DayPicker(),
           ],
         )
       ],
