@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(BirthdayController());
     return GetMaterialApp(
+      title: '30000 days',
       debugShowCheckedModeBanner: false,
       translations: Messages(),
       locale: Get.deviceLocale,
