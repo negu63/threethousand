@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class OssPage extends StatelessWidget {
@@ -29,13 +29,13 @@ class OssPage extends StatelessWidget {
             color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.all(2.0),
-              // child: SvgPicture.asset(
-              //   'assets/images/blinker_icon_1024.svg',
-              //   semanticsLabel: 'blinker logo',
-              //   clipBehavior: Clip.antiAlias,
-              //   width: 64,
-              //   height: 64,
-              child: Icon(Icons.ac_unit),
+              child: SvgPicture.asset(
+                'assets/images/thirtythousand.svg',
+                semanticsLabel: 'thirty thousand logo',
+                clipBehavior: Clip.antiAlias,
+                width: 64,
+                height: 64,
+              ),
             ),
           ),
         ),
