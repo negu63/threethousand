@@ -42,6 +42,18 @@ class DaysText extends StatelessWidget {
   }
 }
 
+class TitleText extends StatelessWidget {
+  const TitleText({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LabelText(
+      text: 'appTitle'.tr,
+      padding: const EdgeInsets.fromLTRB(10, 3, 0, 0),
+    );
+  }
+}
+
 class LabelText extends StatelessWidget {
   const LabelText({
     Key? key,
