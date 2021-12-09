@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:threethousand/modules/home/local_widgets/label_text.dart';
 import 'package:threethousand/modules/home/local_widgets/birthday_picker.dart';
 import 'package:threethousand/modules/home/local_widgets/life_span.dart';
@@ -27,6 +28,8 @@ class HomePage extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Text('descriptionText'.tr,
+                        style: Theme.of(context).textTheme.headline6!),
                     Container(
                       margin: const EdgeInsets.only(top: 50, bottom: 50),
                       child: Row(
@@ -43,7 +46,7 @@ class HomePage extends StatelessWidget {
                 ),
                 const Positioned(
                   bottom: 3,
-                  right: 4,
+                  right: 0,
                   child: OssButton(),
                 ),
                 const Positioned(
