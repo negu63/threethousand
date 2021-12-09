@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:threethousand/core/theme/app_theme.dart';
 import 'package:threethousand/modules/home/controller.dart';
 import 'package:threethousand/modules/home/page.dart';
 
@@ -18,10 +19,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(BirthdayController());
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       translations: Messages(),
       locale: Get.deviceLocale,
       fallbackLocale: const Locale('en', 'US'),
-      debugShowCheckedModeBanner: false,
+      theme: appThemeData,
       initialRoute: Routes.home,
       getPages: AppPages.pages,
       home: const SafeArea(child: HomePage()),
