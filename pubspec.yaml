@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^2.1.0
   numberpicker: ^2.1.1
   sliding_number: ^0.0.4
+  flutter_svg: ^1.0.0
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +66,9 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+
+  assets:
+    - assets/images/thirtythousand.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
