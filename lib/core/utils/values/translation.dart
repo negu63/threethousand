@@ -17,7 +17,7 @@ class Messages extends Translations {
         },
         'ko_KR': {
           'appTitle': '30000일',
-          'descriptionText': '당신이 이때까지 살아온 시간은',
+          'descriptionText': '평균 수명 약 30000일 중에\n당신이 이때까지 살아온 시간은',
           'aboutText': '약',
           'daysText': '일',
           'weeksText': '주',

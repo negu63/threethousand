@@ -28,8 +28,11 @@ class HomePage extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('descriptionText'.tr,
-                        style: Theme.of(context).textTheme.headline6!),
+                    Text(
+                      'descriptionText'.tr,
+                      style: Theme.of(context).textTheme.headline6!,
+                      textAlign: TextAlign.center,
+                    ),
                     Container(
                       margin: const EdgeInsets.only(top: 50, bottom: 50),
                       child: Row(
@@ -48,11 +51,6 @@ class HomePage extends StatelessWidget {
                   bottom: 3,
                   right: 0,
                   child: OssButton(),
-                ),
-                const Positioned(
-                  bottom: 6,
-                  left: 12,
-                  child: TitleText(),
                 ),
               ],
             ),
