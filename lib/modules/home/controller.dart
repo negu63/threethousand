@@ -54,9 +54,9 @@ class BirthdayController extends GetxController {
     final now = DateTime.now();
     final birthday = DateTime(year.value, month.value, day.value);
     final days = now.difference(birthday).inDays;
-    if (now.year >= year.value &&
-        now.month >= month.value &&
-        now.day >= day.value) {
+    if (!(now.year <= year.value &&
+        now.month <= month.value &&
+        now.day <= day.value)) {
       switch (dateType.value) {
         case DateType.DAY:
           lifeSpan.value = days;
