@@ -1,5 +1,4 @@
 class Routes {
-  static const notice = '/';
-  static const home = '/home';
+  static const home = '/';
   static const oss = '/oss';
 }
