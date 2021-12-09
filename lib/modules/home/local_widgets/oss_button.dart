@@ -6,13 +6,18 @@ class OssButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () {
-        Get.toNamed('/oss');
-      },
-      child: Text(
-        'i',
-        style: Theme.of(context).textTheme.headline5!,
+    return Material(
+      child: TextButton(
+        onPressed: () {
+          Get.toNamed('/oss');
+        },
+        child: Text(
+          'i',
+          style: Theme.of(context).textTheme.headline5!,
+        ),
+        style: TextButton.styleFrom(
+          primary: Colors.white,
+        ),
       ),
     );
   }
