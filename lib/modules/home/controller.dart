@@ -6,7 +6,7 @@ class BirthdayController extends GetxController {
   RxInt year = DateTime.now().year.obs;
   RxInt month = DateTime.now().month.obs;
   RxInt day = DateTime.now().day.obs;
-  RxInt lifeSpan = 30000.obs;
+  RxInt lifeSpan = 0.obs;
   Rx<DateType> dateType = DateType.DAY.obs;
 
   @override
@@ -53,7 +53,7 @@ class BirthdayController extends GetxController {
   calculateLifeSpan(value) {
     final now = DateTime.now();
     final birthday = DateTime(year.value, month.value, day.value);
-    final days = 30000 - now.difference(birthday).inDays.abs();
+    final days = now.difference(birthday).inDays.abs();
 
     switch (dateType.value) {
       case DateType.DAY:
