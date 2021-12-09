@@ -5,6 +5,7 @@ class Messages extends Translations {
   Map<String, Map<String, String>> get keys => {
         'en_US': {
           'appTitle': '30000 days',
+          'descriptionText': 'The time you\'ve lived so far...',
           'aboutText': 'About',
           'daysText': 'days',
           'weeksText': 'weeks',
@@ -16,6 +17,7 @@ class Messages extends Translations {
         },
         'ko_KR': {
           'appTitle': '30000일',
+          'descriptionText': '당신이 이때까지 살아온 시간은',
           'aboutText': '약',
           'daysText': '일',
           'weeksText': '주',
