@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:threethousand/modules/home/controller.dart';
 
 import 'label_text.dart';
-import 'package:threethousand/numberpicker.dart';
+import 'package:numberpicker/numberpicker.dart';
 
 class BirthdayPicker extends StatelessWidget {
   const BirthdayPicker({Key? key}) : super(key: key);
