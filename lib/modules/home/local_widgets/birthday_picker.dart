@@ -56,7 +56,6 @@ class BirthdayPicker extends StatelessWidget {
 
 class YearPicker extends StatelessWidget {
   const YearPicker({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final birthdayController = Get.find<BirthdayController>();
@@ -82,6 +81,7 @@ class MonthPicker extends StatelessWidget {
     final birthdayController = Get.find<BirthdayController>();
     return Obx(
       () => NumberPicker(
+        infiniteLoop: true,
         itemCount: 1,
         minValue: 1,
         maxValue: 12,
@@ -101,6 +101,7 @@ class DayPicker extends StatelessWidget {
     final birthdayController = Get.find<BirthdayController>();
     return Obx(
       () => NumberPicker(
+        infiniteLoop: true,
         itemCount: 1,
         minValue: 1,
         maxValue: 31,
