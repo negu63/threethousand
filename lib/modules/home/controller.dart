@@ -6,6 +6,7 @@ class BirthdayController extends GetxController {
   RxInt year = DateTime.now().year.obs;
   RxInt month = DateTime.now().month.obs;
   RxInt day = DateTime.now().day.obs;
+  RxInt lastDay = 31.obs;
   RxInt lifeSpan = 0.obs;
   Rx<DateType> dateType = DateType.DAY.obs;
 
@@ -40,14 +41,21 @@ class BirthdayController extends GetxController {
 
   yearChanged(int value) {
     year.value = value;
+    calculateLastDay();
   }
 
   monthChanged(int value) {
     month.value = value;
+    calculateLastDay();
   }
 
   dayChanged(int value) {
     day.value = value;
+  }
+
+  calculateLastDay() {
+    final date = DateTime(year.value, month.value + 1, 0);
+    dayChanged(date.day);
   }
 
   calculateLifeSpan(value) {
