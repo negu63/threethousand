@@ -56,7 +56,9 @@ class BirthdayController extends GetxController {
   calculateLastDay() {
     final date = DateTime(year.value, month.value + 1, 0);
     lastDay.value = date.day;
-    dayChanged(lastDay.value);
+    if (date.day < day.value) {
+      dayChanged(lastDay.value);
+    }
   }
 
   calculateLifeSpan(value) {
