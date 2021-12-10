@@ -104,7 +104,7 @@ class DayPicker extends StatelessWidget {
         infiniteLoop: true,
         itemCount: 1,
         minValue: 1,
-        maxValue: 31,
+        maxValue: birthdayController.lastDay.value,
         value: birthdayController.day.value,
         selectedTextStyle: Theme.of(context).textTheme.headline6,
         onChanged: birthdayController.dayChanged,
