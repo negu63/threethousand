@@ -62,7 +62,7 @@ class YearPicker extends StatelessWidget {
     final year = DateTime.now().year;
     return Obx(
       () => NumberPicker(
-        itemCount: 1,
+        itemCount: 3,
         minValue: year - 200,
         maxValue: year,
         value: birthdayController.year.value,
@@ -81,7 +81,7 @@ class MonthPicker extends StatelessWidget {
     final birthdayController = Get.find<BirthdayController>();
     return Obx(
       () => NumberPicker(
-        itemCount: 1,
+        itemCount: 3,
         minValue: 1,
         maxValue: 12,
         value: birthdayController.month.value,
@@ -100,7 +100,7 @@ class DayPicker extends StatelessWidget {
     final birthdayController = Get.find<BirthdayController>();
     return Obx(
       () => NumberPicker(
-        itemCount: 1,
+        itemCount: 3,
         minValue: 1,
         maxValue: birthdayController.lastDay.value,
         value: birthdayController.day.value,
